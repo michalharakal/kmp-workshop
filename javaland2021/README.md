@@ -30,7 +30,7 @@ After succesfull import, you can comppile Android App or JVM Desktop App with gr
 
 ## Getting Started mit Android Studio 4.1.2
 
-Requires **Kotlin 1.4.30+**
+Requires **Kotlin 1.4.30+** and **macOS**
 
 ### Install KMM Plugin
 
@@ -51,4 +51,4 @@ After succesfull import, you can comppile Android App or JVM Desktop App with gr
 
 **:android:assembleDebug**
 
-For details follow offcial KMM documantation https://kotlinlang.org/docs/mobile/setup.html
+For details follow offcial KMM documentation https://kotlinlang.org/docs/mobile/setup.html
