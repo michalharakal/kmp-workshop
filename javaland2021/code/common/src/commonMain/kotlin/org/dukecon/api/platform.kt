@@ -1,3 +1,3 @@
-package me.miso.common
+package org.dukecon.api
 
 expect fun getPlatformName(): String

@@ -2,16 +2,26 @@ import org.jetbrains.compose.compose
 
 plugins {
     kotlin("multiplatform")
-    id("org.jetbrains.compose") version "0.2.0-build132"
+    id("org.jetbrains.kotlin.plugin.serialization")
+    id("org.jetbrains.compose")
     id("com.android.library")
     id("kotlin-android-extensions")
+    id("dev.icerock.mobile.multiplatform-network-generator")
 }
 
 group = "me.miso"
 version = "1.0"
 
-repositories {
-    google()
+mokoNetwork {
+    spec("dukecon") {
+        inputSpec = file("${rootDir}/specs/conference_api.json")
+        packageName = "org.dukecon.api"
+        isInternal = false
+        isOpen = true
+        configureTask {
+            // here can be configuration of https://github.com/OpenAPITools/openapi-generator GenerateTask
+        }
+    }
 }
 
 kotlin {
@@ -27,22 +37,51 @@ kotlin {
                 api(compose.runtime)
                 api(compose.foundation)
                 api(compose.material)
+
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3-native-mt")
+                implementation("io.ktor:ktor-utils:1.5.2")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
+
+                implementation("io.ktor:ktor-client-core:1.5.2")
+                implementation("io.ktor:ktor-client-json:1.5.2")
+                implementation("io.ktor:ktor-client-logging:1.5.2")
+                implementation("io.ktor:ktor-client-serialization:1.5.2")
+
             }
         }
-        val commonTest by getting
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test-common"))
+                implementation(kotlin("test-annotations-common"))
+            }
+        }
         val androidMain by getting {
             dependencies {
                 api("androidx.appcompat:appcompat:1.2.0")
-                api("androidx.core:core-ktx:1.3.1")
+                api("androidx.core:core-ktx:1.3.2")
+                implementation("io.ktor:ktor-client-okhttp:1.5.2")
+
             }
         }
         val androidTest by getting {
             dependencies {
-                implementation("junit:junit:4.13")
+                implementation("junit:junit:4.13.2")
             }
         }
-        val desktopMain by getting
-        val desktopTest by getting
+        val desktopMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-apache:1.5.2")
+            }
+        }
+        val desktopTest by getting {
+            dependencies {
+                implementation(kotlin("test-junit"))
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.1")
+                implementation("junit:junit:4.13.2")
+                implementation("io.mockk:mockk:1.9.3")
+
+            }
+        }
     }
 }
 

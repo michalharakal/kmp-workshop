@@ -52,3 +52,63 @@ After succesfull import, you can comppile Android App or JVM Desktop App with gr
 **:android:assembleDebug**
 
 For details follow offcial KMM documentation https://kotlinlang.org/docs/mobile/setup.html
+
+## Update current libraries
+
+State of 15.3.2021
+
+1. Kotlin **1.4.31**
+2. Jetpack Compose Desktop **0.3.2**
+3. Kotlin Serialize   **1.1.0**
+4. Ktor **1.5.2**
+5. Kotlin couroutines 
+
+## Dukecon DTO Model
+
+1.Add **Moko-Netwrok plugin**
+2.Add OpenAPI specification for Dukecon from Swagger(OpenApi) file
+
+
+### Dukecon OpenApi specification
+```
+mokoNetwork {
+    spec("dukecon") {
+        inputSpec = file("${rootDir}/specs/conference_api.json")
+        packageName = "org.dukecon.api"
+        isInternal = false
+        isOpen = true
+    }
+}
+```
+
+
+## DukeCon API 
+
+1. Add ktor dependencies
+2. Add support for serialization
+3. Write wrapper
+
+
+### Dukecon API JVM Unit test
+
+```
+package org.dukecon.common.api
+
+import kotlinx.coroutines.runBlocking
+import org.dukecon.api.DukeconApi
+import org.junit.Test
+import kotlin.test.assertTrue
+
+class DukeconApiTest {
+    @Test
+    fun testJavaland() {
+        val api = DukeconApi()
+        runBlocking<Unit> {
+            val events = api.getEvents()
+            assertTrue { events.isNotEmpty() }
+        }
+    }
+}
+```
+
+

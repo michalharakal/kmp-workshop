@@ -1,6 +1,7 @@
-import me.miso.common.App
 import androidx.compose.desktop.Window
+import org.dukecon.api.App
+
 
 fun main() = Window {
-    App()
+    App(emptyList())
 }
