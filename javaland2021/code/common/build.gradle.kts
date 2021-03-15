@@ -9,8 +9,8 @@ plugins {
     id("dev.icerock.mobile.multiplatform-network-generator")
 }
 
-group = "me.miso"
-version = "1.0"
+group = "org.dukecon.common"
+version = "0.0.1"
 
 mokoNetwork {
     spec("dukecon") {
@@ -18,9 +18,6 @@ mokoNetwork {
         packageName = "org.dukecon.api"
         isInternal = false
         isOpen = true
-        configureTask {
-            // here can be configuration of https://github.com/OpenAPITools/openapi-generator GenerateTask
-        }
     }
 }
 
@@ -38,7 +35,11 @@ kotlin {
                 api(compose.foundation)
                 api(compose.material)
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.3-native-mt")
+                implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2-native-mt"){
+                    version {
+                        strictly("1.4.2-native-mt")
+                    }
+                }
                 implementation("io.ktor:ktor-utils:1.5.2")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
 
@@ -61,6 +62,9 @@ kotlin {
                 api("androidx.core:core-ktx:1.3.2")
                 implementation("io.ktor:ktor-client-okhttp:1.5.2")
 
+                val lifecycleVersion = "2.2.0"
+                implementation("androidx.lifecycle:lifecycle-extensions:$lifecycleVersion")
+                implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion")
             }
         }
         val androidTest by getting {

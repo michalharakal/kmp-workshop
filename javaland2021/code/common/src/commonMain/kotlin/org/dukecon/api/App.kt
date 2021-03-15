@@ -2,12 +2,22 @@ package org.dukecon.api
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.*
-import androidx.compose.runtime.*
-import org.dukecon.api.models.Event
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
+import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import org.dukecon.presentation.EventsViewModel
 
 @Composable
-fun App(events: List<Event>) {
+fun App(events: EventsViewModel) {
+
+    val statusScreenVal = events.statusInputs.collectAsState(
+        emptyList(),
+        events.clientScope.coroutineContext
+    )
+
     MaterialTheme {
         Scaffold(
             topBar = {
@@ -15,12 +25,9 @@ fun App(events: List<Event>) {
             }) {
             Column {
                 LazyColumn {
-                    /*
-                    items(events) { event ->
-                        Text(event.start ?: "Event")
+                    items(statusScreenVal.value.size) { eventIndex ->
+                        Text(statusScreenVal.value[eventIndex].title ?: "Event")
                     }
-
-                     */
                 }
             }
         }
