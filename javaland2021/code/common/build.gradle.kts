@@ -7,6 +7,7 @@ plugins {
     id("com.android.library")
     id("kotlin-android-extensions")
     id("dev.icerock.mobile.multiplatform-network-generator")
+    id("maven-publish")
 }
 
 group = "org.dukecon.common"

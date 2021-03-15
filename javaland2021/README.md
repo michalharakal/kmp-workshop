@@ -111,4 +111,10 @@ class DukeconApiTest {
 }
 ```
 
+## Jitpack publishing
+
+[![](https://jitpack.io/v/michalharakal/kmp-workshop.svg)](https://jitpack.io/#michalharakal/kmp-workshop)
+
+
+
 
