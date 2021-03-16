@@ -1,7 +1,7 @@
 import androidx.compose.desktop.Window
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import org.dukecon.api.App
+import org.dukecon.api.EventsList
 import org.dukecon.api.DukeconApi
 import org.dukecon.common.DukeconRepository
 import org.dukecon.presentation.EventsViewModel
@@ -16,6 +16,6 @@ fun main() {
     }
 
     return Window {
-        App(statusScreenViewModel)
+        EventsList(statusScreenViewModel)
     }
 }

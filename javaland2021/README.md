@@ -1,6 +1,8 @@
-# Kotlin multiplatformworkshop
+# Kotlin multiplatform workshop
 
-Javaland 2021, Cummunity effort
+**Javaland 2021, 17.03.20201**
+
+Cummunity activity Workshop
 
 Falk Sippach, Michal Harakal
 
@@ -10,7 +12,8 @@ Falk Sippach, Michal Harakal
 * Current version of IntelliJ IDEA(2020.3.1) 
 * or Android Studio 4.2 with KMM plugin
 
-NOTE: Also check that you Android SDK has been installed.
+NOTE: Also check that you **Android SDK** has been installed.
+**Android SDK** can be installed via menu item **Tools->Android->SDK Manager**
 
 ## Getting Started mit IntelliJ IDEA
 
@@ -53,8 +56,24 @@ After succesfull import, you can comppile Android App or JVM Desktop App with gr
 
 For details follow offcial KMM documentation https://kotlinlang.org/docs/mobile/setup.html
 
-## Update current libraries
 
+## Update dependencies
+
+### Update IntelliJ Gradle Kotlin Plugin
+<h3 align="center">
+  <img src="docs/images/kotlin-plugin.png" alt="Kotlin plugin" />
+</h3>
+
+
+### Gradle plugins
+
+- **org.jetbrains.compose:compose-gradle-plugin** = 0.3.2
+- **com.android.tools.build:gradle** = 4.0.1
+- **gradle-plugin** = 1.4.31
+- **org.jetbrains.kotlin:kotlin-serialization** = 1.4.31
+- **dev.icerock.moko:network-generator** = 0.11.0
+
+### Libraries
 State of 15.3.2021
 
 1. Kotlin **1.4.31**
@@ -62,6 +81,7 @@ State of 15.3.2021
 3. Kotlin Serialize   **1.1.0**
 4. Ktor **1.5.2**
 5. Kotlin couroutines 
+
 
 ## Dukecon DTO Model
 
@@ -80,6 +100,8 @@ mokoNetwork {
     }
 }
 ```
+
+After proper install a new task **dukeconOpenApiGenerate** will be added.
 
 
 ## DukeCon API 

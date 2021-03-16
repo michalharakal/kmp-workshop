@@ -84,7 +84,6 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.1")
                 implementation("junit:junit:4.13.2")
                 implementation("io.mockk:mockk:1.9.3")
-
             }
         }
     }

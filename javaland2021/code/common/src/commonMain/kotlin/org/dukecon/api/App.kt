@@ -11,7 +11,7 @@ import androidx.compose.runtime.collectAsState
 import org.dukecon.presentation.EventsViewModel
 
 @Composable
-fun App(events: EventsViewModel) {
+fun EventsList(events: EventsViewModel) {
 
     val statusScreenVal = events.statusInputs.collectAsState(
         emptyList(),

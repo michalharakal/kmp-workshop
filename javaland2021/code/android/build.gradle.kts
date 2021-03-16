@@ -14,6 +14,14 @@ repositories {
 dependencies {
     implementation(project(":common"))
 
+    // define a BOM and its version
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.0"))
+
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation("io.ktor:ktor-client-okhttp:1.5.2")
+
     implementation("androidx.activity:activity-compose:1.3.0-alpha04")
 
     implementation("com.google.android.material:material:1.3.0")

@@ -20,6 +20,7 @@ kotlin {
             dependencies {
                 implementation(project(":common"))
                 implementation(compose.desktop.currentOs)
+                implementation("io.ktor:ktor-client-apache:1.5.2")
             }
         }
         val jvmTest by getting
