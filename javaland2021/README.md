@@ -1,21 +1,20 @@
-# Kotlin multiplatform workshop
+# Kotlin/Native and Multiplatform Workshop
 
-**Javaland 2021, 17.03.20201**
+**Javaland 2021, 17.03.20201, 17 Uhr**
 
-Cummunity activity Workshop
+Community activity workshop
 
-Falk Sippach, Michal Harakal
-
+Michal Harakal, Falk Sippach
 
 ## Set up the environment
 
-* Current version of IntelliJ IDEA(2020.3.1) 
-* or Android Studio 4.2 with KMM plugin
+* **Recommended**: Current version of IntelliJ IDEA (2020.3.x) 
+* **or** Android Studio 4.2 with KMM plugin
 
-NOTE: Also check that you **Android SDK** has been installed.
+NOTE: Also make sure that **Android SDK** has been installed.
 **Android SDK** can be installed via menu item **Tools->Android->SDK Manager**
 
-## Getting Started mit IntelliJ IDEA
+## Getting Started (with IntelliJ IDEA)
 
 ### Create project from template
 
@@ -26,12 +25,13 @@ NOTE: Also check that you **Android SDK** has been installed.
   <img src="docs/images/new_project_wizard_01.png" alt="Project wizard, screen 1" />
 </h3>
 
-After succesfull import, you can comppile Android App or JVM Desktop App with gradle tasks:
+After succesfull import, you can compile Android App or JVM Desktop App with gradle tasks:
 
 **:desktop:run**
+or
 **:android:assembleDebug**
 
-## Getting Started mit Android Studio 4.1.2
+## Getting Started (with Android Studio 4.1.2)
 
 Requires **Kotlin 1.4.30+** and **macOS**
 
@@ -50,11 +50,11 @@ Requires **Kotlin 1.4.30+** and **macOS**
   <img src="docs/images/as_new_project_wizard_01.png" alt="Project wizard, screen 1" />
 </h3>
 
-After succesfull import, you can comppile Android App or JVM Desktop App with gradle tasks:
+After succesfull import, you can compile Android App or JVM Desktop App with gradle tasks:
 
 **:android:assembleDebug**
 
-For details follow offcial KMM documentation https://kotlinlang.org/docs/mobile/setup.html
+For details follow offcial KMM documentation: https://kotlinlang.org/docs/mobile/setup.html
 
 
 ## Update dependencies
@@ -85,11 +85,49 @@ State of 15.3.2021
 
 ## Dukecon DTO Model
 
-1.Add **Moko-Netwrok plugin**
-2.Add OpenAPI specification for Dukecon from Swagger(OpenApi) file
+1.Add **Moko-Network plugin**
 
+root build.gradle.kts
+
+```
+buildscript {
+    repositories {
+        maven { url = "https://dl.bintray.com/icerockdev/plugins" }
+    }
+
+    dependencies {
+        classpath "dev.icerock.moko:network-generator:0.12.0"
+    }
+}
+
+
+allprojects {
+    repositories {
+        maven { url = "https://dl.bintray.com/icerockdev/moko" }
+    }
+}
+```
+
+project build.gradle.kts
+
+```
+apply plugin: "dev.icerock.mobile.multiplatform-network-generator"
+
+dependencies {
+    commonMainApi("dev.icerock.moko:network:0.12.0")
+}
+```
+
+3.Add OpenAPI specification for Dukecon from Swagger(OpenApi) file
+
+Download: https://github.com/michalharakal/kmp-workshop/blob/main/javaland2021/code/specs/conference_api.json
+
+and save here: ./specs
 
 ### Dukecon OpenApi specification
+
+project build.gradle.kts
+
 ```
 mokoNetwork {
     spec("dukecon") {
@@ -102,6 +140,7 @@ mokoNetwork {
 ```
 
 After proper install a new task **dukeconOpenApiGenerate** will be added.
+
 
 
 ## DukeCon API 
