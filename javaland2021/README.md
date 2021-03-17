@@ -172,6 +172,82 @@ class DukeconApiTest {
 }
 ```
 
+## Events Repository
+
+Implement repository delivering list of events as `Flow`
+
+```
+class DukeconRepository {
+
+    inner class EventsStateModel : ValueModel<List<Event>>(emptyList())
+
+    private val _eventsStateModel = EventsStateModel()
+
+    val eventsStateModel: Flow<List<Event>>
+        get() = _eventsStateModel.model
+
+    fun updateEvents(value: List<Event>) {
+        _eventsStateModel.setValue(value)
+    }
+}
+```
+
+## Events ViewModel
+
+*Common*
+```
+expect open class CommonViewModel() {
+    val clientScope: CoroutineScope
+    protected open fun onCleared()
+}
+```
+
+*Android*
+```
+actual open class CommonViewModel actual constructor() : ViewModel() {
+    actual val clientScope: CoroutineScope = viewModelScope
+    actual override fun onCleared() {
+        super.onCleared()
+    }
+}
+```
+
+*JVM Desktop*
+```
+actual open class CommonViewModel actual constructor() {
+    actual val clientScope: CoroutineScope = GlobalScope
+
+    protected actual open fun onCleared() {
+    }
+}
+```
+
+## Jetpack Compose
+
+```
+@Composable
+fun EventsList(eventsViewModel: EventsViewModel) {
+
+    val eventsState = eventsViewModel.events.collectAsState(
+        emptyList(),
+        eventsViewModel.clientScope.coroutineContext
+    )
+
+    MaterialTheme {
+        Scaffold(
+            topBar = {
+                TopAppBar(title = { Text("DukeCon") })
+            }) {
+            LazyColumn {
+                items(eventsState.value.size) { eventIndex ->
+                    Text(eventsState.value[eventIndex].title ?: "Event")
+                }
+            }
+        }
+    }
+}
+```
+
 ## Jitpack publishing
 
 [![](https://jitpack.io/v/michalharakal/kmp-workshop.svg)](https://jitpack.io/#michalharakal/kmp-workshop)

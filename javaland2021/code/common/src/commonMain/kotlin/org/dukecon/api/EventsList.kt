@@ -1,6 +1,5 @@
 package org.dukecon.api
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
@@ -11,11 +10,11 @@ import androidx.compose.runtime.collectAsState
 import org.dukecon.presentation.EventsViewModel
 
 @Composable
-fun EventsList(events: EventsViewModel) {
+fun EventsList(eventsViewModel: EventsViewModel) {
 
-    val statusScreenVal = events.statusInputs.collectAsState(
+    val eventsState = eventsViewModel.events.collectAsState(
         emptyList(),
-        events.clientScope.coroutineContext
+        eventsViewModel.clientScope.coroutineContext
     )
 
     MaterialTheme {
@@ -23,11 +22,9 @@ fun EventsList(events: EventsViewModel) {
             topBar = {
                 TopAppBar(title = { Text("DukeCon") })
             }) {
-            Column {
-                LazyColumn {
-                    items(statusScreenVal.value.size) { eventIndex ->
-                        Text(statusScreenVal.value[eventIndex].title ?: "Event")
-                    }
+            LazyColumn {
+                items(eventsState.value.size) { eventIndex ->
+                    Text(eventsState.value[eventIndex].title ?: "Event")
                 }
             }
         }

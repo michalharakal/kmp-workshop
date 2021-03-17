@@ -6,6 +6,5 @@ import org.dukecon.common.DukeconRepository
 import org.dukecon.common.CommonViewModel
 
 class EventsViewModel(repository: DukeconRepository): CommonViewModel() {
-    val statusInputs: Flow<List<Event>> = repository.eventsStateModel
-
+    val events: Flow<List<Event>> = repository.eventsStateModel
 }
