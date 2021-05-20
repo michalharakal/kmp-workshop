@@ -7,6 +7,7 @@ import kotlinx.coroutines.launch
 import org.dukecon.api.DukeconApi
 import org.dukecon.common.DukeconRepository
 import org.jetbrains.compose.common.foundation.layout.Column
+import org.jetbrains.compose.common.foundation.layout.Row
 
 fun main() {
     val conferenceEventsState = mutableStateOf(listOf<String>())
@@ -23,7 +24,9 @@ fun main() {
         Text("Dukecon")
         Column {
             conferenceEventsState.value.forEach { session ->
-                Text(session)
+                Row {
+                    Text(session)
+                }
             }
         }
     }
