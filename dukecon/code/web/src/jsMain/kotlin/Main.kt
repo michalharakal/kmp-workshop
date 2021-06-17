@@ -1,6 +1,4 @@
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.web.elements.Text
-import androidx.compose.web.renderComposable
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -8,6 +6,8 @@ import org.dukecon.api.DukeconApi
 import org.dukecon.common.DukeconRepository
 import org.jetbrains.compose.common.foundation.layout.Column
 import org.jetbrains.compose.common.foundation.layout.Row
+import org.jetbrains.compose.common.material.Text
+import org.jetbrains.compose.web.renderComposable
 
 fun main() {
     val conferenceEventsState = mutableStateOf(listOf<String>())

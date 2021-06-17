@@ -3,7 +3,7 @@ import org.jetbrains.compose.compose
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("org.jetbrains.compose") version "0.4.0-build182"
+    id("org.jetbrains.compose")
     id("maven-publish")
 }
 
@@ -30,9 +30,9 @@ kotlin {
 
                 implementation(project(":common"))
 
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2-native-mt") {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-native-mt") {
                     version {
-                        strictly("1.4.3")
+                        strictly("1.5.0")
                     }
                 }
                 implementation("io.ktor:ktor-utils:1.5.4")
