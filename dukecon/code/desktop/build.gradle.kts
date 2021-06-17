@@ -21,7 +21,7 @@ kotlin {
                 implementation(project(":common"))
                 implementation(project(":common-ui"))
                 implementation(compose.desktop.currentOs)
-                implementation("io.ktor:ktor-client-apache:1.5.2")
+                implementation("io.ktor:ktor-client-apache:1.6.0")
             }
         }
         val jvmTest by getting

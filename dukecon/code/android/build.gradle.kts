@@ -18,9 +18,9 @@ dependencies {
     // define any required OkHttp artifacts without version
     implementation("com.squareup.okhttp3:okhttp")
     implementation("com.squareup.okhttp3:logging-interceptor")
-    implementation("io.ktor:ktor-client-okhttp:1.5.2")
+    implementation("io.ktor:ktor-client-okhttp:1.6.0")
 
-    implementation("androidx.activity:activity-compose:1.3.0-alpha08")
+    implementation("androidx.activity:activity-compose:1.3.0-beta02")
 
     implementation("com.google.android.material:material:1.3.0")
     implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")

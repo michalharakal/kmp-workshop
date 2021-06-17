@@ -35,13 +35,13 @@ kotlin {
                         strictly("1.5.0")
                     }
                 }
-                implementation("io.ktor:ktor-utils:1.5.4")
-                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.1.0")
+                implementation("io.ktor:ktor-utils:1.6.0")
+                implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
 
-                implementation("io.ktor:ktor-client-core:1.5.4")
-                implementation("io.ktor:ktor-client-json:1.5.2")
-                implementation("io.ktor:ktor-client-logging:1.5.2")
-                implementation("io.ktor:ktor-client-serialization:1.5.2")
+                implementation("io.ktor:ktor-client-core:1.6.0")
+                implementation("io.ktor:ktor-client-json:1.6.0")
+                implementation("io.ktor:ktor-client-logging:1.6.0")
+                implementation("io.ktor:ktor-client-serialization:1.6.0")
 
             }
         }
@@ -56,7 +56,7 @@ kotlin {
             dependencies {
                 api("androidx.appcompat:appcompat:1.3.0")
                 api("androidx.core:core-ktx:1.5.0")
-                implementation("io.ktor:ktor-client-okhttp:1.5.2")
+                implementation("io.ktor:ktor-client-okhttp:1.6.0")
 
                 val lifecycleVersion = "2.2.0"
                 implementation("androidx.lifecycle:lifecycle-extensions:$lifecycleVersion")
@@ -71,7 +71,7 @@ kotlin {
 
         val desktopMain by getting {
             dependencies {
-                implementation("io.ktor:ktor-client-apache:1.5.2")
+                implementation("io.ktor:ktor-client-apache:1.6.0")
             }
         }
         val desktopTest by getting {
