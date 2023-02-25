@@ -1,0 +1,39 @@
+name: Build and deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - javaland2023
+  release:
+    types: [ published ]
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            mkdocs_changed:
+              - 'javaland2023/mkdocs/**'
+          working-directory: ./docs
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 11
+          cache: 'maven'
+      - uses: gradle/gradle-build-action@v2
+      - name: Build docs
+        run: ./gradlew mkdocsBuild --info
+        if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
+        working-directory: ./docs
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/mkdocs/build/mkdocs
+          keep_files: true
+          full_commit_message: Publish documentation
