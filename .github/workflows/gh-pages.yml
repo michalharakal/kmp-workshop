@@ -27,7 +27,7 @@ jobs:
       - name: Build docs
         run: ./gradlew mkdocsBuild --info
         if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
-        working-directory: ./javaland2023/mkdocs
+        working-directory: ./javaland2023
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
