@@ -17,8 +17,8 @@ jobs:
         with:
           filters: |
             mkdocs_changed:
-              - 'javaland2023/mkdocs/**'
-          working-directory: ./docs
+              - './javaland2023/mkdocs/**'
+          working-directory: ./javaland2023/docs
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
@@ -28,12 +28,12 @@ jobs:
       - name: Build docs
         run: ./gradlew mkdocsBuild --info
         if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
-        working-directory: ./docs
+        working-directory: ./javaland2023/docs
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs/mkdocs/build/mkdocs
+          publish_dir: ./javaland2023/docs/mkdocs/build/mkdocs
           keep_files: true
           full_commit_message: Publish documentation
