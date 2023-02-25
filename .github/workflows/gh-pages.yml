@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - javaland2023
-  release:
-    types: [ published ]
 
 jobs:
   docs:
