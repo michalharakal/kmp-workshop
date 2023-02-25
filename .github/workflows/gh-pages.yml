@@ -28,11 +28,11 @@ jobs:
         run: ./gradlew mkdocsBuild --info
         if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
         working-directory: ./javaland2023
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
+      - name: Deploy docs to website
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./javaland2023/mkdocs/build/mkdocs
-          keep_files: true
-          full_commit_message: Publish documentation
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            BRANCH: site
+            FOLDER: ./javaland2023/mkdocs/build/mkdocs
+            TARGET_FOLDER: docs/
+            CLEAN: true
