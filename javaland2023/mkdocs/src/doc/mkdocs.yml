@@ -8,7 +8,7 @@ site_url: https://github.com/michalharakal/kmp-workshop
 # Repository (add link to repository on each page)
 repo_name: Javaland 2023 Workshop
 repo_url: https://github.com/michalharakal/kmp-workshop
-edit_uri: edit/master/mkdocs/src/doc/docs/
+edit_uri: edit/javaland-2023/mkdocs/src/doc/docs/
 
 # Copyright (shown at the footer)
 copyright: 'Copyright &copy; 2023 Michal Harakal, Alexander von Below'
@@ -43,6 +43,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.smartsymbols
+  - admonition
   - attr_list
   - md_in_html
   - pymdownx.superfences:
@@ -57,6 +58,8 @@ dev_addr: 127.0.0.1:3001
 nav:
   - Home:
       - index.md
+      - "Setup" : setup.md
+      - "Agenda": agenda.md
 
 extra_css:
   - kmp_colors.css
