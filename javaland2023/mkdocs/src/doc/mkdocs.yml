@@ -8,7 +8,7 @@ site_url: https://github.com/michalharakal/kmp-workshop
 # Repository (add link to repository on each page)
 repo_name: Javaland 2023 Workshop
 repo_url: https://github.com/michalharakal/kmp-workshop
-edit_uri: edit/javaland2023/mkdocs/src/doc/docs/
+edit_uri: blob/javaland-2023/javaland2023/mkdocs/src/doc/docs/
 
 # Copyright (shown at the footer)
 copyright: 'Copyright &copy; 2023 Michal Harakal, Alexander von Below'
