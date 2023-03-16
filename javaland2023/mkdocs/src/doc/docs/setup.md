@@ -20,4 +20,5 @@ NOTE: Also make sure that **Android SDK** has been installed.
 
 ## iOS and macOS
 
-Xcode 13 or later is required to develop for iOS. A (free) Apple Developer account is required to deploy onto a device
+Xcode 14 or later is required to develop for iOS. A (free) Apple Developer account is required to deploy onto a device.
+We recommend to install the [TouchLab Kotlin Plugin for Xcode](https://github.com/touchlab/xcode-kotlin) by running: `brew install xcode-kotlin`
