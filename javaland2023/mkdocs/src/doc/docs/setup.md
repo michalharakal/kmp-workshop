@@ -20,4 +20,4 @@ NOTE: Also make sure that **Android SDK** has been installed.
 
 ## iOS and macOS
 
-TBD
+Xcode 13 or later is required to develop for iOS. A (free) Apple Developer account is required to deploy onto a device
