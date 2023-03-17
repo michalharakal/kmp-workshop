@@ -13,8 +13,16 @@ With the advancement of digitization, the demand for human-machine interface app
 * How to set up a multiplatform project
 * How to use Kotlin Multiplatform to build a desktop application
 * How to use Kotlin Multiplatform to build a mobile application
-* How to use Kotlin Multiplatform to build a iOS application
+* How to display data from a real device with declarative UI frameworks(Jetpack Compose and Swift UI)
 
 ## Setup the environment
 
 See detailed instructions in the [setup](setup.md) section.
+
+## Codelabs
+
+Particular learnigs steps are split into separated branches.
+
+* [Setup](setup.md) - Setting up the project
+* [Part 1](codelab-1.md) - Create your first app that works both on Android and iOS with the IDE
+* [Part 2](https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-2/javaland2023/codelab/iot-explorer) - Add a desktop app to your project
