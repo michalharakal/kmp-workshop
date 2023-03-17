@@ -11,6 +11,7 @@ kotlin {
             }
         }
     }
+    jvm { compilations.all { kotlinOptions.jvmTarget = "11" } }
     
     listOf(
         iosX64(),
