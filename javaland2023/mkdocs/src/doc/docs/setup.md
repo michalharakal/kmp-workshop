@@ -24,6 +24,9 @@ NOTE: Also make sure that **Android SDK** has been installed.
 !!! warning
 Current version of IntelliJ IDEA will work probably as well, but is **not tested yet** with this workshop.
 
+!!! hint
+If you want just try out Compose Multiplatform just with Desktop JVM on IntelliJ IDEA, you can simply follow official guide [Guide for getting started with Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/tree/master/tutorials/Getting_Started)
+
 
 ## iOS and macOS
 
