@@ -12,7 +12,7 @@ kotlin {
         }
     }
     jvm { compilations.all { kotlinOptions.jvmTarget = "11" } }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -24,13 +24,25 @@ kotlin {
     }
 
     sourceSets {
-        val commonMain by getting
+        val commonMain by getting {
+            dependencies {
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+            }
+        }
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
             }
         }
-        val androidMain by getting
+        val androidMain by getting {
+            dependencies {
+                api("androidx.appcompat:appcompat:1.6.1")
+                api("androidx.core:core-ktx:1.9.0")
+                api("androidx.lifecycle:lifecycle-runtime-compose:2.6.0")
+                api("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
+                api("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
+            }
+        }
         val androidUnitTest by getting
         val iosX64Main by getting
         val iosArm64Main by getting
