@@ -1,6 +1,7 @@
 plugins {
-    kotlin("multiplatform")
     id("com.android.library")
+    kotlin("multiplatform")
+    id("org.jetbrains.compose")
 }
 
 kotlin {
@@ -26,6 +27,9 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
+                api(compose.runtime)
+                api(compose.foundation)
+                api(compose.material)
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
             }
         }

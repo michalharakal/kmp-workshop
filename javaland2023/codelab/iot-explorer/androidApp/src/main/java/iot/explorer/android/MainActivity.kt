@@ -9,6 +9,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import iot.explorer.Greeting
+import iot.explorer.presentation.DeviceView
+import iot.explorer.presentation.DeviceViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,22 +21,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    GreetingView(Greeting().greet())
+                    DeviceView(DeviceViewModel())
                 }
             }
         }
     }
 }
 
-@Composable
-fun GreetingView(text: String) {
-    Text(text = text)
-}
 
 @Preview
 @Composable
 fun DefaultPreview() {
     MyApplicationTheme {
-        GreetingView("Hello, Android!")
+        DeviceView(DeviceViewModel())
     }
 }
