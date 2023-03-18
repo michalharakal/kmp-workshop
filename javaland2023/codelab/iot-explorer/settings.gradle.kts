@@ -14,5 +14,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "IotExplorer"
-include(":androidApp")
+include(":AndroidExplorer")
 include(":shared")
