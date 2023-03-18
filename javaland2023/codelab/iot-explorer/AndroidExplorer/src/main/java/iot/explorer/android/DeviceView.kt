@@ -1,4 +1,4 @@
-package iot.explorer.ui
+package iot.explorer.android
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -36,6 +36,5 @@ fun DeviceView(viewModel: DeviceViewModel) {
                 textAlign = TextAlign.Start
             )
         )
-
     }
 }

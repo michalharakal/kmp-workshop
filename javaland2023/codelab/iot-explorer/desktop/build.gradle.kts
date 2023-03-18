@@ -18,7 +18,6 @@ kotlin {
         val jvmMain by getting {
             dependencies {
                 implementation(project(":shared"))
-                implementation(project(":shared-ui"))
                 implementation(compose.desktop.currentOs)
             }
         }

@@ -18,4 +18,3 @@ rootProject.name = "IotExplorer"
 include(":AndroidExplorer")
 include(":shared")
 include(":desktop")
-include(":shared-ui")
