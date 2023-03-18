@@ -1,7 +1,7 @@
 plugins {
-    id("com.android.library")
     kotlin("multiplatform")
-    id("org.jetbrains.compose")
+    kotlin("native.cocoapods")
+    id("com.android.library")
 }
 
 kotlin {
@@ -12,14 +12,20 @@ kotlin {
             }
         }
     }
+
     jvm { compilations.all { kotlinOptions.jvmTarget = "11" } }
 
-    listOf(
-        iosX64(),
-        iosArm64(),
-        iosSimulatorArm64()
-    ).forEach {
-        it.binaries.framework {
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
+    cocoapods {
+        summary = "Some description for the Shared Module"
+        homepage = "Link to the Shared Module homepage"
+        version = "1.0"
+        ios.deploymentTarget = "14.1"
+        podfile = project.file("../iOSExplorer/Podfile")
+        framework {
             baseName = "shared"
         }
     }
@@ -27,9 +33,6 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(compose.runtime)
-                api(compose.foundation)
-                api(compose.material)
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
             }
         }

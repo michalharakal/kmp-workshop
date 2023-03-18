@@ -1,4 +1,4 @@
-package iot.explorer.presentation
+package iot.explorer.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import iot.explorer.presentation.DeviceViewModel
 
 @Composable
 fun DeviceView(viewModel: DeviceViewModel) {
