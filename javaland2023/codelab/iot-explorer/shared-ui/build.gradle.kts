@@ -1,7 +1,7 @@
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("org.jetbrains.compose")
+    id("org.jetbrains.compose") version "1.3.0"
 }
 
 kotlin {
@@ -14,6 +14,11 @@ kotlin {
     }
 
     jvm { compilations.all { kotlinOptions.jvmTarget = "11" } }
+
+    iosX64()
+    iosArm64()
+    iosSimulatorArm64()
+
 
     sourceSets {
         val commonMain by getting {
