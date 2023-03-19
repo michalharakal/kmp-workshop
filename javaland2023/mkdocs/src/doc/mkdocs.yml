@@ -59,7 +59,13 @@ nav:
   - Home:
       - index.md
       - "Setup" : setup.md
-      - "Agenda": agenda.md
+      - "Codelabs":
+        - codelabs.md
+        - "Part 1: First app": codelab-1.md
+        - "Part 2: JVM Desktop": codelab-2.md
+        - "Part 3: Business logic": codelab-3.md
+        - "Part 4: Views": codelab-4.md
+        - "Part 5: Live values": codelab-5.md
 
 extra_css:
   - kmp_colors.css

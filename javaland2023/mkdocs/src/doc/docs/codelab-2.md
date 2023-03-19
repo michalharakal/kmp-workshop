@@ -6,6 +6,9 @@ step [codelab 1 Branch](https://github.com/michalharakal/kmp-workshop/tree/javal
 ## Additional dependencies
 * Compose Multiplatform
 
+!!! note
+Add `kotlin.native.cacheKind=none` to `gradle.properties` to avoid caching issues with Compose Multiplatform 
+
 ## Result
 
 If you want check an expected results,
