@@ -1,6 +1,8 @@
 # Add a real device to your project
 
-If you want check an expected results, checkout [codelab 4 Branch](https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-4/javaland2023/codelab/iot-explorer)
+You can start directly here by cloning the results from previous
+step [codelab 4 Branch](https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-4/javaland2023/codelab/iot-explorer)
+
 
 ## Additional dependencies
 
