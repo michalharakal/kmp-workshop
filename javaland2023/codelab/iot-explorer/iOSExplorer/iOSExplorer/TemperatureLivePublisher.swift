@@ -12,11 +12,11 @@ import SwiftUI
 import Combine
 import shared
 
-class TemperatureLivePublisher: ObservableObject {
+class TemperaturePublisher: ObservableObject {
     @Published var device = DevicePresentationModel(label: "JavaLand", temperature: "3.33")
 }
 
-class TemperaturePreviewPublisher: TemperatureLivePublisher {
+class TemperaturePreviewPublisher: TemperaturePublisher {
     override init() {
         super.init()
         
@@ -24,13 +24,13 @@ class TemperaturePreviewPublisher: TemperatureLivePublisher {
     }
 }
 
-class RoadsLivePublisher: TemperatureLivePublisher {
+class TemperatureLivePublisher: TemperaturePublisher {
     override init() {
         super.init()
         let viewModel = DeviceViewModel.Companion.init().create()
-        let roadsStateCommonFlow = viewModel.getCommonFlowFromIos()
-
-        roadsStateCommonFlow.watch { deviceState in
+        let deviceStateCommonFlow = viewModel.getCommonFlowFromIos()
+        
+        deviceStateCommonFlow.watch { deviceState in
             if let deviceState = deviceState {
                 self.objectWillChange.send()
                 self.device = deviceState
