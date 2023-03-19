@@ -23,11 +23,24 @@ abstract class ValueModel<T : Any>(initialValue: T) {
 }
 
 class PlcDeviceRepository {
+
+    private val networkMapper = DeviceNetworkMapper()
+
+    init {
+        val mqttReceiver = MqttReceiver { temperature ->
+            updateTemperature(networkMapper.toDomain(temperature))
+        }.start()
+    }
+
     private inner class TemperatureValueModel : ValueModel<Device>(
         Device("Javaland", 0f)
     )
 
-    private val _temperature = TemperatureValueModel()
-    val temperature: Flow<Device>
-        get() = _temperature.model
+    private val _device = TemperatureValueModel()
+    val device: Flow<Device>
+        get() = _device.model
+
+    fun updateTemperature(temperature: Float) {
+        _device.setValue(Device(_device.model.value.name, temperature))
+    }
 }

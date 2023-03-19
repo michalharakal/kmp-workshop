@@ -1,5 +1,6 @@
 package iot.explorer.presentation
 
+import iot.explorer.data.MqttReceiver
 import iot.explorer.data.PlcDeviceRepository
 import iot.explorer.domain.Device
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -12,14 +13,13 @@ class DeviceViewModel : CommonViewModel() {
 
     private val repository = PlcDeviceRepository()
 
-
     private val _state = MutableStateFlow(DevicePresentationModel())
     val state: StateFlow<DevicePresentationModel>
         get() = _state
 
     init {
         clientScope.launch {
-            repository.temperature.collect { temperature ->
+            repository.device.collect { temperature ->
                 _state.value = mapToViewData(temperature)
             }
         }
