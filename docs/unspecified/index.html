@@ -298,10 +298,127 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_3" data-md-state="indeterminate" type="checkbox" id="__nav_1_3" checked>
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_1_3">
+          Codelabs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Codelabs" data-md-level="2">
+        <label class="md-nav__title" for="__nav_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Codelabs
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
     <li class="md-nav__item">
-      <a href="agenda/" class="md-nav__link">
-        Agenda
+      <a href="codelabs/" class="md-nav__link">
+        Codelabs
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="codelab-1/" class="md-nav__link">
+        Part 1: First app
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="codelab-2/" class="md-nav__link">
+        Part 2: JVM Desktop
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="codelab-3/" class="md-nav__link">
+        Part 3: Business logic
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="codelab-4/" class="md-nav__link">
+        Part 4: Views
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="codelab-5/" class="md-nav__link">
+        Part 5: Live values
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -338,6 +455,13 @@
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workhop-materials-and-code" class="md-nav__link">
+    Workhop materials and code
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#learning-goals" class="md-nav__link">
@@ -380,8 +504,10 @@
 
 <h1 id="kotlinnative-and-multiplatform-workshop">Kotlin/Native and Multiplatform Workshop<a class="headerlink" href="#kotlinnative-and-multiplatform-workshop" title="Permanent link">&para;</a></h1>
 <p><strong>Javaland 2023, Mittwoch 22.03.2023 | 14:30 - 17:30 | Community Room</strong></p>
-<p>Community activity workshop</p>
+<p><strong>Community activity workshop</strong></p>
 <p>Michal Harakal, Alexander von Below</p>
+<p><a href="https://shop.doag.org/events/javaland/2023/agenda/#eventDay.1679439600"><img alt="JavaLand 2023" src="https://www.javaland.eu/fileadmin/user_upload/JavaLand_2023-Banner-512x256-Twitter-dabei.jpg" /></a></p>
+<h2 id="workhop-materials-and-code">Workhop materials and code<a class="headerlink" href="#workhop-materials-and-code" title="Permanent link">&para;</a></h2>
 <p>With the advancement of digitization, the demand for human-machine interface applications in various industrial sectors
 is also growing. They should not only be safe, reliable and slim – they should also be modern, good-looking and
 networked. In this hands-on workshop, we'll build a simple JVM desktop app that communicates with a real device and look
@@ -399,24 +525,22 @@ responsive user interfaces are designed today.</p>
 <h2 id="setup-the-environment">Setup the environment<a class="headerlink" href="#setup-the-environment" title="Permanent link">&para;</a></h2>
 <p>See detailed instructions in the <a href="setup/">setup</a> section.</p>
 <h2 id="codelabs">Codelabs<a class="headerlink" href="#codelabs" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+</div>
+<p>This material is still under a heavy development. It is not yet complete and may contain errors.
+We are looking forward to meet you in a person at Javaland 2023.</p>
 <p>Code labs are split into separated branches. Consequent branches are based on previous ones. If you have any problems or
-just want to skip over to the next step, simply check the next branch. Every clean checkout branch should build from
+just want to skip over to the next step, simply check the next branch. Every clean checkout branch should build and run from the
 command line.</p>
+<p>In Particular, learning steps are split into separated branches.</p>
+<p>Start here <a href="codelabs/">Codelabs</a></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 </div>
 <p>Because of switching between the branches, build configurations and dependencies may be changed. Sometimes it is
 necessary to clean the project and/or restart the IDE. If this does not help, try to delete the <code>.idea</code> and <code>.gradle</code>
 folder and restart the IDE.</p>
-<p>Particular learnigs steps are split into separated branches.</p>
-<ul>
-<li><a href="setup/">Setup</a> – Setting up the project</li>
-<li><a href="codelab-1/">Part 1</a> – Create your first app that works both on Android and iOS with the IDE</li>
-<li><a href="codelab-2/">Part 2</a> – Add a desktop app to your project</li>
-<li><a href="codelab-3/">Part 3</a> – Add business logic to your project</li>
-<li><a href="codelab-4/">Part 4</a> – Show me the data, adding views to your project</li>
-<li><a href="codelab-5/">Part 4</a> – Add a real device to your project</li>
-</ul>
 
               
             </article>
