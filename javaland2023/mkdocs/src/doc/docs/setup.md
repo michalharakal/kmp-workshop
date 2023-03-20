@@ -11,13 +11,22 @@ To write iOS-specific or macOS-specific code  and run it as a native iOS or macO
 ### Android Studio
 
 * **Recommended**: Current version of Android Studio
-  * Android Studio Electric Eel | 2022.1.1 Patch 2 (17.3.2023)
+  * Android Studio Electric Eel | 2022.1.1 Patch 2 (as for **17.3.2023**)
 * IntelliJ Plugin [Kotlin Multiplatform Mobile](https://plugins.jetbrains.com/plugin/14936-kotlin-multiplatform-mobile)
 * IntelliJ Plugin [Compose Multiplatform IDE Support](https://plugins.jetbrains.com/plugin/16541-compose-multiplatform-ide-support)
 
-NOTE: Also make sure that **Android SDK** has been installed.
-**Android SDK** can be installed via menu item **Tools->Android->SDK Manager**
+#### KMM Plugin
 
+![KMM Plugin](KMM_plugin.png)
+
+#### Compose Multiplatform IDE Support
+
+![KMM Plugin](CMP_plugin.png)
+
+
+!!! note
+Also make sure that **Android SDK** has been installed.
+**Android SDK** can be installed via menu item **Tools->Android->SDK Manager**
 
 ### IntelliJ IDEA
 
