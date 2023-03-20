@@ -403,6 +403,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#adding-a-desktop-app-as-a-new-module" class="md-nav__link">
+    Adding a desktop app as a new module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-gradlebuildkts" class="md-nav__link">
+    Fix gradle.build.kts
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix gradle.build.kts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#additional-dependencies" class="md-nav__link">
     Additional dependencies
   </a>
@@ -507,6 +541,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#adding-a-desktop-app-as-a-new-module" class="md-nav__link">
+    Adding a desktop app as a new module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-gradlebuildkts" class="md-nav__link">
+    Fix gradle.build.kts
+  </a>
+  
+    <nav class="md-nav" aria-label="Fix gradle.build.kts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plugins" class="md-nav__link">
+    Plugins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#additional-dependencies" class="md-nav__link">
     Additional dependencies
   </a>
@@ -541,6 +609,46 @@
 <h1 id="add-a-desktop-app-to-your-project">Add a desktop app to your project<a class="headerlink" href="#add-a-desktop-app-to-your-project" title="Permanent link">&para;</a></h1>
 <p>You can start directly here by cloning the results from previous
 step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-1/javaland2023/codelab/iot-explorer">codelab 1 Branch</a></p>
+<h2 id="adding-a-desktop-app-as-a-new-module">Adding a desktop app as a new module<a class="headerlink" href="#adding-a-desktop-app-as-a-new-module" title="Permanent link">&para;</a></h2>
+<p><img alt="Desktop" src="../cl2-wizard-1.png" /></p>
+<h2 id="fix-gradlebuildkts">Fix gradle.build.kts<a class="headerlink" href="#fix-gradlebuildkts" title="Permanent link">&para;</a></h2>
+<h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h3>
+<ul>
+<li>use Kotlin Multiplatform plugin and plugin for Compose Multiplatform</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">plugins</span> <span class="p">{</span>
+    <span class="n">kotlin</span><span class="p">(</span><span class="s">&quot;multiplatform&quot;</span><span class="p">)</span>
+    <span class="n">id</span><span class="p">(</span><span class="s">&quot;org.jetbrains.compose&quot;</span><span class="p">)</span> <span class="n">version</span> <span class="s">&quot;1.3.0&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>define <em>JVM</em> as one and only mutltiplatform target</li>
+<li>add dependencies for shared code</li>
+<li>add compose dependencies</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">kotlin</span> <span class="p">{</span>
+    <span class="n">jvm</span> <span class="p">{</span>
+        <span class="n">jvmToolchain</span><span class="p">(</span><span class="m">11</span><span class="p">)</span>
+        <span class="n">withJava</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="n">sourceSets</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">jvmMain</span> <span class="k">by</span> <span class="n">getting</span> <span class="p">{</span>
+            <span class="n">dependencies</span> <span class="p">{</span>
+                <span class="n">implementation</span><span class="p">(</span><span class="n">project</span><span class="p">(</span><span class="s">&quot;:shared&quot;</span><span class="p">))</span>
+                <span class="n">implementation</span><span class="p">(</span><span class="n">compose</span><span class="p">.</span><span class="na">desktop</span><span class="p">.</span><span class="na">currentOs</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="kd">val</span> <span class="nv">jvmTest</span> <span class="k">by</span> <span class="n">getting</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<p>Now we have a new source set <code>jvmMain</code> and <code>jvmTest</code> for JVM specific code.</p>
+<p>Also adapt folder structure to match new source set.</p>
+<p><img alt="Desktop" src="../cl2-folder-struct.png" /></p>
 <h2 id="additional-dependencies">Additional dependencies<a class="headerlink" href="#additional-dependencies" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Compose Multiplatform</li>
