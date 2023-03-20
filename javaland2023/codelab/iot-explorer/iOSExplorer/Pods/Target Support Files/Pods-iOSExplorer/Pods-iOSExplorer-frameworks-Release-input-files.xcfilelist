@@ -1,2 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-iOSExplorer/Pods-iOSExplorer-frameworks.sh
+${BUILT_PRODUCTS_DIR}/CocoaMQTT/CocoaMQTT.framework
+${BUILT_PRODUCTS_DIR}/MqttCocoaAsyncSocket/MqttCocoaAsyncSocket.framework
 ${PODS_ROOT}/../../shared/build/cocoapods/framework/shared.framework
