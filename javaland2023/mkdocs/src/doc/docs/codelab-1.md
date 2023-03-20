@@ -9,6 +9,18 @@ Start with a new project from the wizard. In case that KMM plugin is not install
 ![Kotlin Multuplatform App](kmm_wizard.png)
 
 
+### App name
+![Kotlin Multuplatform App 1](cl1-wizard-1.png)
+
+* Name: IotExplorer
+* Package name: iot.explorer
+
+### Multiplatform Module
+![Kotlin Multuplatform App 2](cl1-wizard-2.png)
+
+!!! hint
+Important ist to select ``CocoaPods`` as a dependency manager.
+
 Initially, it takes some time until projects imports and builds.
 
 After the project is created, you can simply run it on Android or iOS simulator.
