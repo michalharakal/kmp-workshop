@@ -24,10 +24,6 @@ kotlin {
         homepage = "Link to the Shared Module homepage"
         version = "1.0"
         ios.deploymentTarget = "14.1"
-        pod("CocoaAsyncSocket")
-        pod("CocoaMQTT") {
-            version = "~>  2.1.3"
-        }
         podfile = project.file("../iOSExplorer/Podfile")
         framework {
             baseName = "shared"
@@ -52,9 +48,15 @@ kotlin {
                 api("androidx.lifecycle:lifecycle-runtime-compose:2.6.0")
                 api("androidx.lifecycle:lifecycle-runtime-ktx:2.6.0")
                 api("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0")
+                implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
             }
         }
         val androidUnitTest by getting
+        val jvmMain by getting {
+            dependencies {
+                implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
+            }
+        }
         val iosX64Main by getting
         val iosArm64Main by getting
         val iosSimulatorArm64Main by getting

@@ -27,9 +27,12 @@ class PlcDeviceRepository {
     private val networkMapper = DeviceNetworkMapper()
 
     init {
-        val mqttReceiver = MqttReceiver { temperature ->
-            updateTemperature(networkMapper.toDomain(temperature))
-        }.start()
+        val mqttReceiver = MqttReceiver()
+        mqttReceiver.connect(onMessage =  { message ->
+            updateTemperature(networkMapper.toDomain(message))
+        }) { error ->
+            print(error)
+        }
     }
 
     private inner class TemperatureValueModel : ValueModel<Device>(
