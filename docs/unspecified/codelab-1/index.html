@@ -389,9 +389,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#create-a-new-project" class="md-nav__link">
+    Create a new project
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a new project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commonmain" class="md-nav__link">
+    commonMain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#androidmain" class="md-nav__link">
+    androidMain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iosmain" class="md-nav__link">
+    iosMain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#result" class="md-nav__link">
     Result
   </a>
+  
+    <nav class="md-nav" aria-label="Result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -500,9 +554,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#create-a-new-project" class="md-nav__link">
+    Create a new project
+  </a>
+  
+    <nav class="md-nav" aria-label="Create a new project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commonmain" class="md-nav__link">
+    commonMain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#androidmain" class="md-nav__link">
+    androidMain
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iosmain" class="md-nav__link">
+    iosMain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#result" class="md-nav__link">
     Result
   </a>
+  
+    <nav class="md-nav" aria-label="Result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -525,8 +633,41 @@
 
 
 <h1 id="create-your-first-app-that-works-both-on-android-and-ios-with-the-ide">Create your first app that works both on Android and iOS with the IDE<a class="headerlink" href="#create-your-first-app-that-works-both-on-android-and-ios-with-the-ide" title="Permanent link">&para;</a></h1>
-<p>TBD</p>
+<p>The goal of this codelab is to create a simple app that works on Android and iOS. We start by creating the app from the wizard. This step also makes sure, that working environment is set properly. See <a href="../setup/">setup</a> section for details. </p>
+<h2 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">&para;</a></h2>
+<p>Start with a new project from the wizard. In case that KMM plugin is not installed, you can select 
+<img alt="Kotlin Multuplatform App" src="../kmm_wizard.png" /></p>
+<p>Initially, it takes some time until projects imports and builds.</p>
+<p>After the project is created, you can simply run it on Android or iOS simulator.</p>
+<p>Lets have a look on the project structure.</p>
+<h3 id="commonmain">commonMain<a class="headerlink" href="#commonmain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">expect</span> <span class="kd">fun</span> <span class="nf">getPlatform</span><span class="p">():</span> <span class="n">Platform</span>
+</code></pre></div>
+<h3 id="androidmain">androidMain<a class="headerlink" href="#androidmain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">AndroidPlatform</span> <span class="p">:</span> <span class="n">Platform</span> <span class="p">{</span>
+    <span class="kd">override</span> <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&quot;Android </span><span class="si">${</span><span class="n">android</span><span class="p">.</span><span class="na">os</span><span class="p">.</span><span class="na">Build</span><span class="p">.</span><span class="na">VERSION</span><span class="p">.</span><span class="na">SDK_INT</span><span class="si">}</span><span class="s">&quot;</span>
+<span class="p">}</span>
+
+<span class="kd">actual</span> <span class="kd">fun</span> <span class="nf">getPlatform</span><span class="p">():</span> <span class="n">Platform</span> <span class="o">=</span> <span class="n">AndroidPlatform</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="iosmain">iosMain<a class="headerlink" href="#iosmain" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nn">platform.UIKit.UIDevice</span>
+
+<span class="kd">class</span> <span class="nc">IOSPlatform</span><span class="p">:</span> <span class="n">Platform</span> <span class="p">{</span>
+    <span class="kd">override</span> <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">UIDevice</span><span class="p">.</span><span class="na">currentDevice</span><span class="p">.</span><span class="na">systemName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">UIDevice</span><span class="p">.</span><span class="na">currentDevice</span><span class="p">.</span><span class="na">systemVersion</span>
+<span class="p">}</span>
+
+<span class="kd">actual</span> <span class="kd">fun</span> <span class="nf">getPlatform</span><span class="p">():</span> <span class="n">Platform</span> <span class="o">=</span> <span class="n">IOSPlatform</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+</div>
+<p>IOS platform highlits the possibility to use platform specific libraries. In this case, we use <code>UIKit</code> framework to get information about the device.</p>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
+<h3 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
+<p><img alt="App running on Android" src="../codelab-1-android.png" /></p>
+<h3 id="ios">iOS<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
+<p><img alt="App running on iOS" src="../codelab-1-ios.png" /></p>
 <p>If you want check an expected results, checkout [codelab 1 Branch]((<a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-1/javaland2023/codelab/iot-explorer">https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-1/javaland2023/codelab/iot-explorer</a>)</p>
 
               
