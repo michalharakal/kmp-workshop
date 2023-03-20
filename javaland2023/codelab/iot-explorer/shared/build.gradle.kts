@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    kotlin("native.cocoapods")
+    kotlin("native.cocoapods") version "1.8.0"
     id("com.android.library")
 }
 
@@ -24,6 +24,10 @@ kotlin {
         homepage = "Link to the Shared Module homepage"
         version = "1.0"
         ios.deploymentTarget = "14.1"
+        pod("CocoaAsyncSocket")
+        pod("CocoaMQTT") {
+            version = "~>  2.1.3"
+        }
         podfile = project.file("../iOSExplorer/Podfile")
         framework {
             baseName = "shared"
