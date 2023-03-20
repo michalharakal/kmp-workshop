@@ -18,7 +18,8 @@ actual class MqttReceiver actual constructor() {
         val persistence =  MemoryPersistence()
         client = MqttClient(url, "test", persistence)
         client.connect()
-        client.subscribe("/home/#")
+
+        client.subscribe("sensor/btemp", 0)
         client.setCallback(object : MqttCallback {
             override fun messageArrived(topic: String?, message: MqttMessage?) {
                 try {
