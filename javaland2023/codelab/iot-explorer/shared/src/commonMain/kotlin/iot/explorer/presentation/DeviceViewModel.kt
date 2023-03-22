@@ -1,10 +1,10 @@
 package iot.explorer.presentation
 
-import iot.explorer.data.MqttReceiver
 import iot.explorer.data.PlcDeviceRepository
 import iot.explorer.domain.Device
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 data class DevicePresentationModel(val label: String = "", val temperature: String = "")
@@ -31,5 +31,18 @@ class DeviceViewModel : CommonViewModel() {
             temperature = temperatureFormatter(homePresenter.temperature)
         )
 
+    @Suppress("unused")
+    fun getCommonFlowFromIos(): CFlow<DevicePresentationModel> {
+        val roadsStateCommonFlow = state.asCommonFlow()
+        repository.device.map { device ->
+            mapToViewData(device)
+        }
+        return roadsStateCommonFlow
+    }
+
     private fun temperatureFormatter(temperature: Float): String = "${temperature}°C"
+
+    companion object {
+        fun create() = DeviceViewModel()
+    }
 }
