@@ -7,6 +7,23 @@ step [codelab 1 Branch](https://github.com/michalharakal/kmp-workshop/tree/javal
 
 ![Desktop](cl2-wizard-1.png)
 
+## extend shared module
+
+Since we are going to add a new target with the `desktop` module, we have to add this target (`jvm`) also to the `shared` module. 
+
+Add following code to `shared/build.gradle.kts`:
+
+```kotlin
+kotlin {
+    ...
+    jvm {
+        jvmToolchain(11)
+        withJava()
+    }
+    ...
+}
+```
+
 ## Fix gradle.build.kts
 
 
@@ -19,7 +36,6 @@ plugins {
     id("org.jetbrains.compose") version "1.3.0"
 }
 ```
-
 
 ### Dependencies
 
