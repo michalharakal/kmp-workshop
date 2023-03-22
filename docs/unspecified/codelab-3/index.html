@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#add-business-logic-to-your-project" class="md-skip">
+        <a href="#sharing-is-caring" class="md-skip">
           Skip to content
         </a>
       
@@ -433,6 +433,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes-on-software-architecture" class="md-nav__link">
     Notes on software architecture
   </a>
@@ -440,9 +447,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-dependencies" class="md-nav__link">
-    Additional dependencies
+  <a href="#domain" class="md-nav__link">
+    Domain
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-repository" class="md-nav__link">
+    Data - repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-communication-mocked-mqtt-receiver" class="md-nav__link">
+    Remote communication - Mocked MQTT Receiver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewmodel" class="md-nav__link">
+    ViewModel
+  </a>
+  
+    <nav class="md-nav" aria-label="ViewModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    Common
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -530,6 +578,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#notes-on-software-architecture" class="md-nav__link">
     Notes on software architecture
   </a>
@@ -537,9 +592,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#additional-dependencies" class="md-nav__link">
-    Additional dependencies
+  <a href="#domain" class="md-nav__link">
+    Domain
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-repository" class="md-nav__link">
+    Data - repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remote-communication-mocked-mqtt-receiver" class="md-nav__link">
+    Remote communication - Mocked MQTT Receiver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#viewmodel" class="md-nav__link">
+    ViewModel
+  </a>
+  
+    <nav class="md-nav" aria-label="ViewModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    Common
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -568,24 +664,172 @@
 
 
 
-<h1 id="add-business-logic-to-your-project">Add business logic to your project<a class="headerlink" href="#add-business-logic-to-your-project" title="Permanent link">&para;</a></h1>
+<h1 id="sharing-is-caring">Sharing is caring<a class="headerlink" href="#sharing-is-caring" title="Permanent link">&para;</a></h1>
 <p>You can start directly here by cloning the results from previous
 step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-2/javaland2023/codelab/iot-explorer">codelab 2 Branch</a></p>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<p>The main goal of this code lab add codewhich can be shared between supported platform. It can be:</p>
+<ul>
+<li>remote communication</li>
+<li>caching</li>
+<li>busisines logic</li>
+<li>ViewModels</li>
+</ul>
 <h2 id="notes-on-software-architecture">Notes on software architecture<a class="headerlink" href="#notes-on-software-architecture" title="Permanent link">&para;</a></h2>
+<p>A well define architecture helps to create componets, which can be shared for various targets.</p>
 <p><img alt="alt text" src="../clean_code_data.png" /></p>
 <p>Blocks in the image are grouped by columns into the following 3 layers:</p>
 <ul>
-<li>presentation</li>
-<li>domain</li>
 <li>data</li>
+<li>domain</li>
+<li>presentation</li>
 </ul>
-<h2 id="additional-dependencies">Additional dependencies<a class="headerlink" href="#additional-dependencies" title="Permanent link">&para;</a></h2>
+<h2 id="domain">Domain<a class="headerlink" href="#domain" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">package</span> <span class="nn">iot.explorer.domain</span>
+
+<span class="kd">data</span> <span class="kd">class</span> <span class="nc">Device</span><span class="p">(</span><span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kd">val</span> <span class="nv">temperature</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="data-repository">Data - repository<a class="headerlink" href="#data-repository" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">package</span> <span class="nn">iot.explorer.data</span>
+
+<span class="k">import</span> <span class="nn">iot.explorer.domain.Device</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.flow.Flow</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.flow.MutableStateFlow</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.flow.StateFlow</span>
+
+<span class="kd">abstract</span> <span class="kd">class</span> <span class="nc">ValueModel</span><span class="o">&lt;</span><span class="n">T</span> <span class="p">:</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">(</span><span class="n">initialValue</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// private data flow</span>
+    <span class="kd">private</span> <span class="kd">val</span> <span class="nv">_internalMutableFlow</span> <span class="o">=</span> <span class="n">MutableStateFlow</span><span class="p">(</span><span class="n">initialValue</span><span class="p">)</span>
+
+    <span class="c1">// publicly exposed as a flow</span>
+    <span class="kd">val</span> <span class="nv">model</span><span class="p">:</span> <span class="n">StateFlow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+        <span class="k">get</span><span class="p">()</span> <span class="o">=</span> <span class="n">_internalMutableFlow</span>
+
+    <span class="kd">fun</span> <span class="nf">setValue</span><span class="p">(</span><span class="n">newValue</span><span class="p">:</span> <span class="n">T</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">newValue</span> <span class="o">!=</span> <span class="n">_internalMutableFlow</span><span class="p">.</span><span class="na">value</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">_internalMutableFlow</span><span class="p">.</span><span class="na">value</span> <span class="o">=</span> <span class="n">newValue</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kd">class</span> <span class="nc">PlcDeviceRepository</span> <span class="p">{</span>
+
+    <span class="kd">private</span> <span class="kd">val</span> <span class="nv">networkMapper</span> <span class="o">=</span> <span class="n">DeviceNetworkMapper</span><span class="p">()</span>
+
+    <span class="k">init</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">mqttReceiver</span> <span class="o">=</span> <span class="n">MqttReceiver</span> <span class="p">{</span> <span class="n">temperature</span> <span class="o">-&gt;</span>
+            <span class="n">updateTemperature</span><span class="p">(</span><span class="n">networkMapper</span><span class="p">.</span><span class="na">toDomain</span><span class="p">(</span><span class="n">temperature</span><span class="p">))</span>
+        <span class="p">}.</span><span class="na">start</span><span class="p">()</span>
+    <span class="p">}</span>
+
+    <span class="kd">private</span> <span class="kd">inner</span> <span class="kd">class</span> <span class="nc">TemperatureValueModel</span> <span class="p">:</span> <span class="n">ValueModel</span><span class="o">&lt;</span><span class="n">Device</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">Device</span><span class="p">(</span><span class="s">&quot;Javaland&quot;</span><span class="p">,</span> <span class="m">0f</span><span class="p">)</span>
+    <span class="p">)</span>
+
+    <span class="kd">private</span> <span class="kd">val</span> <span class="nv">_device</span> <span class="o">=</span> <span class="n">TemperatureValueModel</span><span class="p">()</span>
+    <span class="kd">val</span> <span class="nv">device</span><span class="p">:</span> <span class="n">Flow</span><span class="o">&lt;</span><span class="n">Device</span><span class="o">&gt;</span>
+        <span class="k">get</span><span class="p">()</span> <span class="o">=</span> <span class="n">_device</span><span class="p">.</span><span class="na">model</span>
+
+    <span class="kd">fun</span> <span class="nf">updateTemperature</span><span class="p">(</span><span class="n">temperature</span><span class="p">:</span> <span class="kt">Float</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">_device</span><span class="p">.</span><span class="na">setValue</span><span class="p">(</span><span class="n">Device</span><span class="p">(</span><span class="n">_device</span><span class="p">.</span><span class="na">model</span><span class="p">.</span><span class="na">value</span><span class="p">.</span><span class="na">name</span><span class="p">,</span> <span class="n">temperature</span><span class="p">))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="remote-communication-mocked-mqtt-receiver">Remote communication - Mocked MQTT Receiver<a class="headerlink" href="#remote-communication-mocked-mqtt-receiver" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="k">package</span> <span class="nn">iot.explorer.data</span>
+
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.CoroutineScope</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.Job</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.delay</span>
+<span class="k">import</span> <span class="nn">kotlinx.coroutines.launch</span>
+<span class="k">import</span> <span class="nn">kotlin.coroutines.EmptyCoroutineContext</span>
+<span class="k">import</span> <span class="nn">kotlin.random.Random</span>
+
+<span class="kd">class</span> <span class="nc">Timer</span><span class="p">(</span><span class="kd">private</span> <span class="kd">val</span> <span class="nv">updateInterface</span><span class="p">:</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Unit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">var</span> <span class="nv">timer</span><span class="p">:</span> <span class="n">Job? </span><span class="o">=</span> <span class="kc">null</span>
+
+    <span class="kd">fun</span> <span class="nf">start</span><span class="p">(</span><span class="n">seconds</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">callback</span> <span class="o">=</span> <span class="n">updateInterface</span>
+        <span class="n">timer</span> <span class="o">=</span> <span class="n">CoroutineScope</span><span class="p">(</span><span class="n">EmptyCoroutineContext</span><span class="p">).</span><span class="na">launch</span> <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">callback</span><span class="p">()</span>
+                <span class="n">delay</span><span class="p">(</span><span class="n">seconds</span> <span class="o">*</span> <span class="m">1000L</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="kd">fun</span> <span class="nf">stop</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">timer</span><span class="o">?.</span><span class="na">cancel</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Mocked MQTT Receiver sending a new value every second</span>
+<span class="kd">open</span> <span class="kd">class</span> <span class="nc">MqttReceiver</span> <span class="k">constructor</span><span class="p">(</span><span class="kd">val</span> <span class="nv">handler</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Unit</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">fun</span> <span class="nf">start</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">Timer</span> <span class="p">{</span>
+            <span class="n">handler</span><span class="p">(</span><span class="n">Random</span><span class="p">.</span><span class="na">nextDouble</span><span class="p">(</span><span class="o">-</span><span class="m">20.0</span><span class="p">,</span> <span class="m">20.0</span><span class="p">).</span><span class="na">toString</span><span class="p">())</span>
+        <span class="p">}.</span><span class="na">start</span><span class="p">(</span><span class="m">1</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="viewmodel">ViewModel<a class="headerlink" href="#viewmodel" title="Permanent link">&para;</a></h2>
+<h3 id="common">Common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">expect</span> <span class="kd">open</span> <span class="kd">class</span> <span class="nc">CommonViewModel</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="nv">clientScope</span><span class="p">:</span> <span class="n">CoroutineScope</span>
+    <span class="kd">protected</span> <span class="kd">open</span> <span class="kd">fun</span> <span class="nf">onCleared</span><span class="p">()</span>
+<span class="p">}</span>
+</code></pre></div>
+<p><strong>iOS Support</strong>
+<div class="highlight"><pre><span></span><code><span class="kd">fun</span> <span class="kd">interface</span> <span class="nc">Closeable</span> <span class="p">{</span>
+    <span class="kd">fun</span> <span class="nf">close</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="kd">fun</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">Flow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">.</span><span class="na">asCommonFlow</span><span class="p">():</span> <span class="n">CFlow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">CFlow</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+
+<span class="kd">fun</span> <span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="nf">Flow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">.</span><span class="na">wrap</span><span class="p">():</span> <span class="n">CFlow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">CFlow</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+
+<span class="kd">class</span> <span class="nc">CFlow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">(</span><span class="kd">private</span> <span class="kd">val</span> <span class="nv">origin</span><span class="p">:</span> <span class="n">Flow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span><span class="p">)</span> <span class="p">:</span> <span class="n">Flow</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="k">by</span> <span class="n">origin</span> <span class="p">{</span>
+    <span class="kd">fun</span> <span class="nf">watch</span><span class="p">(</span><span class="n">block</span><span class="p">:</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Unit</span><span class="p">):</span> <span class="n">Closeable</span> <span class="p">{</span>
+        <span class="kd">val</span> <span class="nv">job</span> <span class="o">=</span> <span class="n">Job</span><span class="p">(</span><span class="cm">/*ConferenceService.coroutineContext[Job]*/</span><span class="p">)</span>
+
+        <span class="n">onEach</span> <span class="p">{</span>
+            <span class="n">block</span><span class="p">(</span><span class="nb">it</span><span class="p">)</span>
+        <span class="p">}.</span><span class="na">launchIn</span><span class="p">(</span><span class="n">CoroutineScope</span><span class="p">(</span><span class="n">Dispatchers</span><span class="p">.</span><span class="na">Main</span> <span class="o">+</span> <span class="n">job</span><span class="p">))</span>
+
+        <span class="k">return</span> <span class="k">object</span> <span class="p">:</span> <span class="nc">Closeable</span> <span class="p">{</span>
+            <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">close</span><span class="p">()</span> <span class="p">{</span>
+                <span class="n">job</span><span class="p">.</span><span class="na">cancel</span><span class="p">()</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="err">````</span>
+
+<span class="err">###</span> <span class="n">Android</span>
+
+<span class="err">```</span><span class="n">kotlin</span>
+<span class="kd">actual</span> <span class="kd">open</span> <span class="kd">class</span> <span class="nc">CommonViewModel</span> <span class="n">actual</span> <span class="k">constructor</span><span class="p">()</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">actual</span> <span class="kd">val</span> <span class="nv">clientScope</span><span class="p">:</span> <span class="n">CoroutineScope</span> <span class="o">=</span> <span class="n">viewModelScope</span>
+    <span class="kd">actual</span> <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCleared</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">super</span><span class="p">.</span><span class="na">onCleared</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></p>
+<h3 id="ios">iOS<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kd">actual</span> <span class="kd">open</span> <span class="kd">class</span> <span class="nc">CommonViewModel</span> <span class="n">actual</span> <span class="k">constructor</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">actual</span> <span class="kd">val</span> <span class="nv">clientScope</span><span class="p">:</span> <span class="n">CoroutineScope</span> <span class="o">=</span> <span class="n">MainScope</span><span class="p">()</span>
+
+    <span class="kd">protected</span> <span class="kd">actual</span> <span class="kd">open</span> <span class="kd">fun</span> <span class="nf">onCleared</span><span class="p">()</span> <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span>   
+</code></pre></div>
 <ul>
 <li>Couroutines</li>
 <li>Android Lifecycle for handling in ViewModel</li>
 </ul>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
-<p>TBD</p>
+<p><img alt="cl3-desktop-result" src="../cl3-desktop-result.png" /></p>
 <p>If you want check an expected results,
 checkout <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-3/javaland2023/codelab/iot-explorer">codelab 3 Branch</a></p>
 
