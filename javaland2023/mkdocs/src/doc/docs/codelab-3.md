@@ -133,7 +133,10 @@ expect open class CommonViewModel() {
 ```
 
 **iOS Support**
+
 ```kotlin
+package iot.explorer.presentation
+
 fun interface Closeable {
     fun close()
 }
