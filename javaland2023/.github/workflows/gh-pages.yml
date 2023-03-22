@@ -1,0 +1,38 @@
+name: Build and deploy MkDocs to GitHub Pages
+
+on:
+  push:
+    branches: [ "javaland-2023" ]
+  pull_request:
+    branches: [ "javaland-2023" ]
+
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            mkdocs_changed:
+              - './javaland2023/mkdocs/**'
+          working-directory: ./javaland2023/mkdocs
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: 11
+      - uses: gradle/gradle-build-action@v2
+      - name: Build docs
+        run: ./gradlew mkdocsBuild --info
+        if: github.event_name == 'release' || steps.filter.outputs.mkdocs_changed == 'true'
+        working-directory: ./javaland2023
+      - name: Deploy docs to website
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: site
+          FOLDER: ./javaland2023/mkdocs/build/mkdocs
+          TARGET_FOLDER: docs/
+          CLEAN: true
