@@ -52,13 +52,13 @@ Also adapt folder structure to match new source set.
 
 ![Desktop](cl2-folder-struct.png)
 
-## Additional dependencies
-* Compose Multiplatform
-
 !!! note
 Add `kotlin.native.cacheKind=none` to `gradle.properties` to avoid caching issues with Compose Multiplatform 
 
 ## Result
+
+![Desktop](cl2-desktop-jl.png)
+
 
 If you want check an expected results,
 checkout [codelab 2 Branch](https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-2/javaland2023/codelab/iot-explorer)

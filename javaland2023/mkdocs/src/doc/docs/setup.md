@@ -36,6 +36,19 @@ Current version of IntelliJ IDEA will work probably as well, but is **not tested
 !!! hint
 If you want just try out Compose Multiplatform just with Desktop JVM on IntelliJ IDEA, you can simply follow official guide [Guide for getting started with Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/tree/master/tutorials/Getting_Started)
 
+!!! warning
+Because of incompatible versions of Kotlin and Kotlin plugin, IntelliJ IDEA will not work properly with this workshop. You can try bet Version of Android Gradle Plugin.
+
+```
+plugins {
+    id("com.android.application").version("7.4.0-beta02").apply(false)
+    id("com.android.library").version("7.4.0-beta02").apply(false)
+    kotlin("android").version("1.8.0").apply(false)
+    kotlin("multiplatform").version("1.8.0").apply(false)
+    id("org.jetbrains.compose").version("1.3.0").apply(false)
+}
+```
+
 
 ## iOS and macOS
 
