@@ -58,6 +58,7 @@ dev_addr: 127.0.0.1:3001
 nav:
   - Home:
       - index.md
+      - "Who we are" : bios.md
       - "Setup" : setup.md
       - "Codelabs":
         - codelabs.md
