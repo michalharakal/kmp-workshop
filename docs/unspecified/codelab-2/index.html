@@ -259,6 +259,8 @@
         
           
         
+          
+        
       
       
         
@@ -426,6 +428,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#extend-shared-module" class="md-nav__link">
+    extend shared module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fix-gradlebuildkts" class="md-nav__link">
     Fix gradle.build.kts
   </a>
@@ -517,6 +526,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final_notes/" class="md-nav__link">
+        Final notes
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -552,6 +575,13 @@
         <li class="md-nav__item">
   <a href="#adding-a-desktop-app-as-a-new-module" class="md-nav__link">
     Adding a desktop app as a new module
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend-shared-module" class="md-nav__link">
+    extend shared module
   </a>
   
 </li>
@@ -613,6 +643,18 @@
 step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-1/javaland2023/codelab/iot-explorer">codelab 1 Branch</a></p>
 <h2 id="adding-a-desktop-app-as-a-new-module">Adding a desktop app as a new module<a class="headerlink" href="#adding-a-desktop-app-as-a-new-module" title="Permanent link">&para;</a></h2>
 <p><img alt="Desktop" src="../cl2-wizard-1.png" /></p>
+<h2 id="extend-shared-module">extend shared module<a class="headerlink" href="#extend-shared-module" title="Permanent link">&para;</a></h2>
+<p>Since we are going to add a new target with the <code>desktop</code> module, we have to add this target (<code>jvm</code>) also to the <code>shared</code> module. </p>
+<p>Add following code to <code>shared/build.gradle.kts</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">kotlin</span> <span class="p">{</span>
+    <span class="p">...</span>
+    <span class="n">jvm</span> <span class="p">{</span>
+        <span class="n">jvmToolchain</span><span class="p">(</span><span class="m">11</span><span class="p">)</span>
+        <span class="n">withJava</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="p">...</span>
+<span class="p">}</span>
+</code></pre></div>
 <h2 id="fix-gradlebuildkts">Fix gradle.build.kts<a class="headerlink" href="#fix-gradlebuildkts" title="Permanent link">&para;</a></h2>
 <h3 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">&para;</a></h3>
 <ul>
