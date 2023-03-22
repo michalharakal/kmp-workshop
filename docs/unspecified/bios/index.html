@@ -12,14 +12,14 @@
         <meta name="author" content="Michal Harakal, Alexander von Below">
       
       
-        <link rel="canonical" href="https://github.com/michalharakal/kmp-workshop/unspecified/codelab-1/">
+        <link rel="canonical" href="https://github.com/michalharakal/kmp-workshop/unspecified/bios/">
       
       <link rel="icon" href="../favicon.svg">
       <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.8">
     
     
       
-        <title>Part 1: First app - Javaland 2023 Kotlin Multiplatform Workshop</title>
+        <title>Who we are - Javaland 2023 Kotlin Multiplatform Workshop</title>
       
     
     
@@ -66,11 +66,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#create-your-first-app-that-works-both-on-android-and-ios-with-the-ide" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +95,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Part 1: First app
+              Who we are
             
           </span>
         </div>
@@ -285,11 +280,19 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../bios/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Who we are
       </a>
+      
     </li>
   
 
@@ -313,14 +316,12 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" type="checkbox" id="__nav_1_4" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" data-md-state="indeterminate" type="checkbox" id="__nav_1_4" checked>
       
       
       
@@ -369,120 +370,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Part 1: First app
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../codelab-1/" class="md-nav__link">
         Part 1: First app
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-new-project" class="md-nav__link">
-    Create a new project
-  </a>
-  
-    <nav class="md-nav" aria-label="Create a new project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#app-name" class="md-nav__link">
-    App name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplatform-module" class="md-nav__link">
-    Multiplatform Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commonmain" class="md-nav__link">
-    commonMain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#androidmain" class="md-nav__link">
-    androidMain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iosmain" class="md-nav__link">
-    iosMain
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
-    Result
-  </a>
-  
-    <nav class="md-nav" aria-label="Result">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#android" class="md-nav__link">
-    Android
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ios" class="md-nav__link">
-    iOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -564,167 +456,23 @@
               </div>
             
             
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-new-project" class="md-nav__link">
-    Create a new project
-  </a>
-  
-    <nav class="md-nav" aria-label="Create a new project">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#app-name" class="md-nav__link">
-    App name
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#multiplatform-module" class="md-nav__link">
-    Multiplatform Module
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#commonmain" class="md-nav__link">
-    commonMain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#androidmain" class="md-nav__link">
-    androidMain
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#iosmain" class="md-nav__link">
-    iosMain
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#result" class="md-nav__link">
-    Result
-  </a>
-  
-    <nav class="md-nav" aria-label="Result">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#android" class="md-nav__link">
-    Android
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ios" class="md-nav__link">
-    iOS
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content" data-md-component="content">
             <article class="md-content__inner md-typeset">
               
                 
-<a href="https://github.com/michalharakal/kmp-workshop/blob/javaland-2023/javaland2023/mkdocs/src/doc/docs/codelab-1.md" title="Edit this page" class="md-content__button md-icon">
+<a href="https://github.com/michalharakal/kmp-workshop/blob/javaland-2023/javaland2023/mkdocs/src/doc/docs/bios.md" title="Edit this page" class="md-content__button md-icon">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
 </a>
 
 
 
-<h1 id="create-your-first-app-that-works-both-on-android-and-ios-with-the-ide">Create your first app that works both on Android and iOS with the IDE<a class="headerlink" href="#create-your-first-app-that-works-both-on-android-and-ios-with-the-ide" title="Permanent link">&para;</a></h1>
-<p>The goal of this codelab is to create a simple app that works on Android and iOS. We start by creating the app from the wizard. This step also makes sure, that working environment is set properly. See <a href="../setup/">setup</a> section for details. </p>
-<h2 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">&para;</a></h2>
-<p>Start with a new project from the wizard. In case that KMM plugin is not installed, you can select 
-<img alt="Kotlin Multuplatform App" src="../kmm_wizard.png" /></p>
-<h3 id="app-name">App name<a class="headerlink" href="#app-name" title="Permanent link">&para;</a></h3>
-<p><img alt="Kotlin Multuplatform App 1" src="../cl1-wizard-1.png" /></p>
-<ul>
-<li>Name: IotExplorer</li>
-<li>Package name: iot.explorer</li>
-</ul>
-<h3 id="multiplatform-module">Multiplatform Module<a class="headerlink" href="#multiplatform-module" title="Permanent link">&para;</a></h3>
-<p><img alt="Kotlin Multuplatform App 2" src="../cl1-wizard-2.png" /></p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-</div>
-<p>Important ist to select <code>CocoaPods</code> as a dependency manager.</p>
-<p>Initially, it takes some time until projects imports and builds.</p>
-<p>After the project is created, you can simply run it on Android or iOS simulator.</p>
-<p>Lets have a look on the project structure.</p>
-<h3 id="commonmain">commonMain<a class="headerlink" href="#commonmain" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">expect</span> <span class="kd">fun</span> <span class="nf">getPlatform</span><span class="p">():</span> <span class="n">Platform</span>
-</code></pre></div>
-<h3 id="androidmain">androidMain<a class="headerlink" href="#androidmain" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kd">class</span> <span class="nc">AndroidPlatform</span> <span class="p">:</span> <span class="n">Platform</span> <span class="p">{</span>
-    <span class="kd">override</span> <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">&quot;Android </span><span class="si">${</span><span class="n">android</span><span class="p">.</span><span class="na">os</span><span class="p">.</span><span class="na">Build</span><span class="p">.</span><span class="na">VERSION</span><span class="p">.</span><span class="na">SDK_INT</span><span class="si">}</span><span class="s">&quot;</span>
-<span class="p">}</span>
+  <h1>Who we are</h1>
 
-<span class="kd">actual</span> <span class="kd">fun</span> <span class="nf">getPlatform</span><span class="p">():</span> <span class="n">Platform</span> <span class="o">=</span> <span class="n">AndroidPlatform</span><span class="p">()</span>
-</code></pre></div>
-<h3 id="iosmain">iosMain<a class="headerlink" href="#iosmain" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">import</span> <span class="nn">platform.UIKit.UIDevice</span>
-
-<span class="kd">class</span> <span class="nc">IOSPlatform</span><span class="p">:</span> <span class="n">Platform</span> <span class="p">{</span>
-    <span class="kd">override</span> <span class="kd">val</span> <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n">UIDevice</span><span class="p">.</span><span class="na">currentDevice</span><span class="p">.</span><span class="na">systemName</span><span class="p">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">UIDevice</span><span class="p">.</span><span class="na">currentDevice</span><span class="p">.</span><span class="na">systemVersion</span>
-<span class="p">}</span>
-
-<span class="kd">actual</span> <span class="kd">fun</span> <span class="nf">getPlatform</span><span class="p">():</span> <span class="n">Platform</span> <span class="o">=</span> <span class="n">IOSPlatform</span><span class="p">()</span>
-</code></pre></div>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-</div>
-<p>IOS platform highlits the possibility to use platform specific libraries. In this case, we use <code>UIKit</code> framework to get information about the device.</p>
-<h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
-<h3 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
-<p><img alt="App running on Android" src="../codelab-1-android.png" /></p>
-<h3 id="ios">iOS<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
-<p><img alt="App running on iOS" src="../codelab-1-ios.png" /></p>
-<p>If you want check an expected results, checkout [codelab 1 Branch]((<a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-1/javaland2023/codelab/iot-explorer">https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-1/javaland2023/codelab/iot-explorer</a>)</p>
+<p><strong>Michal Harakal</strong></p>
+<p>Nach einer langen Karriere als Software Entwickler, zuletzt in einer Rolle als Android Entwickler, ist Michal auf seinem Weg zum Datenwissenschaftler und arbeitet derzeit als Machine Learning Engineer bei der Deutschen Telekom AG. Sein Werkzeugkasten, in dem JVM und Kotlin einen besonderen Platz haben, ist vielseitig gefüllt. Michal teilt gerne seine Erfahrung, ist im Open-Source-Projekten aktiv und organisiert Data Science Python Study Group Meetup.</p>
+<p><strong>Alexander von Below</strong></p>
+<p>hat schon vor 30 Jahren Software für den Apple Macintosh geschrieben und seit 2008 Apps für das iPhone. Er war Geburtshelfer der ersten iPhone-Apps der Deutschen Telekom AG und ist dort heute Lead Software Architect. Er lebt in Köln und blutet Gerüchten zufolge in den sechs Farben des alten Apple-Logos.</p>
 
               
             </article>
@@ -743,7 +491,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../codelabs/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Codelabs" rel="prev">
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Kotlin/Native and Multiplatform Workshop" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -752,20 +500,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Codelabs
+              Kotlin/Native and Multiplatform Workshop
             </div>
           </div>
         </a>
       
       
         
-        <a href="../codelab-2/" class="md-footer__link md-footer__link--next" aria-label="Next: Part 2: JVM Desktop" rel="next">
+        <a href="../setup/" class="md-footer__link md-footer__link--next" aria-label="Next: Setup" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Part 2: JVM Desktop
+              Setup
             </div>
           </div>
           <div class="md-footer__button md-icon">
