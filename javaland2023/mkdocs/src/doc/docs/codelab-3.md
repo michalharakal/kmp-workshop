@@ -186,7 +186,8 @@ actual open class CommonViewModel actual constructor() {
 
 ## Result
 
-TBD
+![cl3-desktop-result](cl3-desktop-result.png)
+
 
 If you want check an expected results,
 checkout [codelab 3 Branch](https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-3/javaland2023/codelab/iot-explorer)
