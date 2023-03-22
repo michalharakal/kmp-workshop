@@ -13,8 +13,8 @@ The simples way is to extract following zip file and extend `settings.gradle.kts
 
 Download zipped module here [shared-ui.zip](shared-ui.zip)
 
-## iOS
-
 ## Result
+
+Visually there is no difference, but now we have a shared UI.
 
 If you want check an expected results, checkout [codelab 4 Branch](https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-4/javaland2023/codelab/iot-explorer)
