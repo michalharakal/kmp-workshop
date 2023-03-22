@@ -11,7 +11,7 @@ The goal of the code lab is to create a shared model with Compose Multiplatform 
 
 The simples way is to extract following zip file and extend `settings.gradle.kts` referencing new module by adding `include(":shared-ui")`
 
-Download zipped module here [shared-ui.zip](shared-ui.zip)
+Download zipped module here [shared-ui.zip](https://github.com/michalharakal/kmp-workshop/tree/javaland-2023/javaland2023/mkdocs/src/doc/docs)
 
 ## Result
 
