@@ -780,8 +780,10 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
     <span class="kd">protected</span> <span class="kd">open</span> <span class="kd">fun</span> <span class="nf">onCleared</span><span class="p">()</span>
 <span class="p">}</span>
 </code></pre></div>
-<p><strong>iOS Support</strong>
-<div class="highlight"><pre><span></span><code><span class="kd">fun</span> <span class="kd">interface</span> <span class="nc">Closeable</span> <span class="p">{</span>
+<p><strong>iOS Support</strong></p>
+<div class="highlight"><pre><span></span><code><span class="k">package</span> <span class="nn">iot.explorer.presentation</span>
+
+<span class="kd">fun</span> <span class="kd">interface</span> <span class="nc">Closeable</span> <span class="p">{</span>
     <span class="kd">fun</span> <span class="nf">close</span><span class="p">()</span>
 <span class="p">}</span>
 
@@ -815,7 +817,7 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
         <span class="k">super</span><span class="p">.</span><span class="na">onCleared</span><span class="p">()</span>
     <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></p>
+</code></pre></div>
 <h3 id="ios">iOS<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kd">actual</span> <span class="kd">open</span> <span class="kd">class</span> <span class="nc">CommonViewModel</span> <span class="n">actual</span> <span class="k">constructor</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">actual</span> <span class="kd">val</span> <span class="nv">clientScope</span><span class="p">:</span> <span class="n">CoroutineScope</span> <span class="o">=</span> <span class="n">MainScope</span><span class="p">()</span>
