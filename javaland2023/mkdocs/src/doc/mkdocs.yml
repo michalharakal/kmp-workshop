@@ -67,7 +67,7 @@ nav:
         - "Part 3: Business logic": codelab-3.md
         - "Part 4: Views": codelab-4.md
         - "Part 5: Live values": codelab-5.md
-      - "Final notes" : final-notes.md
+      - "Final notes" : final_notes.md
 
 extra_css:
   - kmp_colors.css

@@ -10,3 +10,4 @@ Here collection of ideas, hints from attendees.
     * https://github.com/JetBrains/compose-multiplatform-template
     * its empty now, but quite a new, lets if it will be filled with some templates https://github.com/JetBrains/compose-multiplatform-ios-android-template
 * usage of keyword `as` as ["Unsafe" cast operator](https://kotlinlang.org/docs/typecasts.html#unsafe-cast-operator) for "readonly" value holder types in the repository implementation 
+* add requirements on `cocoapods` in the [setup](setup.md)
