@@ -11,7 +11,7 @@ import iot.explorer.getPlatform
 
 @Composable
 fun App() {
-    var text by remember { mutableStateOf("Hello, World!") }
+    var text by remember { mutableStateOf("Hello, JavaLand 2023!") }
     val platformName = getPlatform().name
 
     Button(onClick = {
