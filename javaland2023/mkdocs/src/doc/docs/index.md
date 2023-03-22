@@ -2,6 +2,8 @@
 
 **Javaland 2023, Mittwoch 22.03.2023 | 14:30 - 17:30 | Community Room**
 
+Michal Harakal, Alexander von Below
+
 **Community activity workshop**
 
 Michal Harakal, Alexander von Below
