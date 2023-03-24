@@ -505,6 +505,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -622,6 +629,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -661,6 +675,7 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
 <h2 id="talking-to-the-real-world">Talking to the real world<a class="headerlink" href="#talking-to-the-real-world" title="Permanent link">&para;</a></h2>
 <p>Here we use again power of <code>expect/actual</code> and write KMP mqtt client using native libraries</p>
 <h3 id="add-mqtt-client">Add mqtt-client<a class="headerlink" href="#add-mqtt-client" title="Permanent link">&para;</a></h3>
+<p><img alt="Cocoapods" src="../CocoaPodsCommon.drawio.png" /></p>
 <h3 id="common">common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">package</span> <span class="nn">iot.explorer.data</span>
 
@@ -732,6 +747,10 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
         <span class="p">}</span>
 </code></pre></div>
 As you can see, we use eclipse's paho library for mqtt communication, show real power of Kotlin Multiplatform.</p>
+<h3 id="ios">iOS<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
+<p>For iOS we use <a href="https://github.com/emqx/CocoaMQTT/">CocoaMQTT</a>, which has a known issue with <code>cinterop</code> with swift libraries using <code>@import</code> directive usages in a generated Obj-C header 
+The fix for the issue is tracked with this <a href="https://github.com/michalharakal/kmp-workshop/issues/3">Github issue</a></p>
+<p>Of course, you can always add this CocoaPod dependency into the iOS project directly, and then calling <code>shared</code> code from iOS project.</p>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
 <p>Voilà, now we have a real device connected to our app.</p>
 <p>If you want check an expected results, checkout <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/codelab-5/javaland2023/codelab/iot-explorer">codelab 5 Branch</a></p>

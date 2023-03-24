@@ -485,6 +485,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ios" class="md-nav__link">
     iOS
   </a>
@@ -644,6 +651,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#ios" class="md-nav__link">
     iOS
   </a>
@@ -693,7 +707,7 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
 </ul>
 <h2 id="notes-on-software-architecture">Notes on software architecture<a class="headerlink" href="#notes-on-software-architecture" title="Permanent link">&para;</a></h2>
 <p>A well define architecture helps to create componets, which can be shared for various targets.</p>
-<p><img alt="alt text" src="../clean_code_data.png" /></p>
+<p><img alt="clean code data" src="../clean_code_data.png" /></p>
 <p>Blocks in the image are grouped by columns into the following 3 layers:</p>
 <ul>
 <li>data</li>
@@ -797,6 +811,7 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>iOS Support</strong></p>
+<p>iOS does not support Coroutines, so we need to create a wrapper for <code>CoroutineScope</code> and use it in our <code>ViewModel</code></p>
 <div class="highlight"><pre><span></span><code><span class="k">package</span> <span class="nn">iot.explorer.presentation</span>
 
 <span class="kd">fun</span> <span class="kd">interface</span> <span class="nc">Closeable</span> <span class="p">{</span>
@@ -822,12 +837,11 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
         <span class="p">}</span>
     <span class="p">}</span>
 <span class="p">}</span>
-<span class="err">````</span>
-
-<span class="err">###</span> <span class="n">Android</span>
-
-<span class="err">```</span><span class="n">kotlin</span>
-<span class="kd">actual</span> <span class="kd">open</span> <span class="kd">class</span> <span class="nc">CommonViewModel</span> <span class="n">actual</span> <span class="k">constructor</span><span class="p">()</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
+</code></pre></div>
+<h3 id="android">Android<a class="headerlink" href="#android" title="Permanent link">&para;</a></h3>
+<p>Android implementation of <code>CommonViewModel</code> is using <code>viewModelScope</code> property from <code>Android Lifecycle</code> library. 
+This shows the power of Kotlin Multiplatform, where we can use the proper code for a particular platform.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">actual</span> <span class="kd">open</span> <span class="kd">class</span> <span class="nc">CommonViewModel</span> <span class="n">actual</span> <span class="k">constructor</span><span class="p">()</span> <span class="p">:</span> <span class="n">ViewModel</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">actual</span> <span class="kd">val</span> <span class="nv">clientScope</span><span class="p">:</span> <span class="n">CoroutineScope</span> <span class="o">=</span> <span class="n">viewModelScope</span>
     <span class="kd">actual</span> <span class="kd">override</span> <span class="kd">fun</span> <span class="nf">onCleared</span><span class="p">()</span> <span class="p">{</span>
         <span class="k">super</span><span class="p">.</span><span class="na">onCleared</span><span class="p">()</span>
@@ -835,6 +849,7 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
 <span class="p">}</span>
 </code></pre></div>
 <h3 id="ios">iOS<a class="headerlink" href="#ios" title="Permanent link">&para;</a></h3>
+<p>iOS's implementation of <code>CommonViewModel</code> is using <code>MainScope</code> from <code>Kotlinx Coroutines</code> library.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">actual</span> <span class="kd">open</span> <span class="kd">class</span> <span class="nc">CommonViewModel</span> <span class="n">actual</span> <span class="k">constructor</span><span class="p">()</span> <span class="p">{</span>
     <span class="kd">actual</span> <span class="kd">val</span> <span class="nv">clientScope</span><span class="p">:</span> <span class="n">CoroutineScope</span> <span class="o">=</span> <span class="n">MainScope</span><span class="p">()</span>
 
@@ -842,10 +857,6 @@ step <a href="https://github.com/michalharakal/kmp-workshop/tree/javaland2023/co
     <span class="p">}</span>
 <span class="p">}</span>   
 </code></pre></div>
-<ul>
-<li>Couroutines</li>
-<li>Android Lifecycle for handling in ViewModel</li>
-</ul>
 <h2 id="result">Result<a class="headerlink" href="#result" title="Permanent link">&para;</a></h2>
 <p><img alt="cl3-desktop-result" src="../cl3-desktop-result.png" /></p>
 <p>If you want check an expected results,
