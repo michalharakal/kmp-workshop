@@ -16,7 +16,11 @@ Here we use again power of `expect/actual` and write KMP mqtt client using nativ
 
 ### Add mqtt-client
 
+![Cocoapods](CocoaPodsCommon.drawio.png)
+
+
 ### common
+
 ```kotlin
 package iot.explorer.data
 
@@ -94,6 +98,12 @@ actual class MqttReceiver actual constructor() {
 ```
 As you can see, we use eclipse's paho library for mqtt communication, show real power of Kotlin Multiplatform.
 
+### iOS
+
+For iOS we use [CocoaMQTT](https://github.com/emqx/CocoaMQTT/), which has a known issue with `cinterop` with swift libraries using `@import` directive usages in a generated Obj-C header 
+The fix for the issue is tracked with this [Github issue](https://github.com/michalharakal/kmp-workshop/issues/3)
+
+Of course, you can always add this CocoaPod dependency into the iOS project directly, and then calling `shared` code from iOS project.
 
 ## Result
 

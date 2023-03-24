@@ -15,7 +15,7 @@ The main goal of this code lab add codewhich can be shared between supported pla
 
 A well define architecture helps to create componets, which can be shared for various targets.
 
-![alt text](clean_code_data.png)
+![clean code data](clean_code_data.png)
 
 Blocks in the image are grouped by columns into the following 3 layers:
 
@@ -134,6 +134,8 @@ expect open class CommonViewModel() {
 
 **iOS Support**
 
+iOS does not support Coroutines, so we need to create a wrapper for `CoroutineScope` and use it in our `ViewModel`
+
 ```kotlin
 package iot.explorer.presentation
 
@@ -160,9 +162,12 @@ class CFlow<T>(private val origin: Flow<T>) : Flow<T> by origin {
         }
     }
 }
-````
+```
 
 ### Android
+
+Android implementation of `CommonViewModel` is using `viewModelScope` property from `Android Lifecycle` library. 
+This shows the power of Kotlin Multiplatform, where we can use the proper code for a particular platform.
 
 ```kotlin
 actual open class CommonViewModel actual constructor() : ViewModel() {
@@ -175,6 +180,8 @@ actual open class CommonViewModel actual constructor() : ViewModel() {
 
 ### iOS
 
+iOS's implementation of `CommonViewModel` is using `MainScope` from `Kotlinx Coroutines` library.
+
 ```kotlin
 actual open class CommonViewModel actual constructor() {
     actual val clientScope: CoroutineScope = MainScope()
@@ -183,9 +190,6 @@ actual open class CommonViewModel actual constructor() {
     }
 }   
 ```
-
-* Couroutines
-* Android Lifecycle for handling in ViewModel
 
 ## Result
 
